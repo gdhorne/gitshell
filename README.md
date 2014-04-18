@@ -42,9 +42,9 @@ typically installed on modern-day Unix systems, including GNU/Linux and Apple Ma
 * Further information about the commands available within the GitSHell
   environment can be found by typing the command:
 
-  (1) 'help' within GitShell
-  (2) 'gitsh help [command]' within GitShell
-  (3) 'man git[sh] [command]' at the Unix shell prompt
+  * 'help' within GitShell
+  * 'gitsh help [command]' within GitShell
+  * 'man git[sh] [command]' at the Unix shell prompt
 
   A subset of the full Git command set is supported by GitShell while 
   providing the the most useful functionality.
