@@ -54,7 +54,7 @@ Instructions forthcoming.
 
 ## Contributing
 
-If you have the skills to translate the messages file (i18n/en/en.po) to
+If you have the skills to translate the messages file (i18n/en.po) to
 another language, your assistance would be greatly appreciated.
 
 ## License
