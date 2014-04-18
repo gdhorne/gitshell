@@ -52,6 +52,11 @@ typically installed on modern-day Unix systems, including GNU/Linux and Apple Ma
 
 Instructions forthcoming.
 
+## Contributing
+
+If you have the skills to translate the messages file (i18n/en/en.po) to
+another language, your assistance would be greatly appreciated.
+
 ## License
 
 Copyright © 2013,2014 Gregory D. Horne.
