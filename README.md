@@ -5,8 +5,7 @@
 ## Introduction
 
 The idea for the Git Command Shell (GitSHell) originated while participating in the
-"Start-up Engineering" course, during Summer 2013, offered by Stanford University
-in conjunction with Coursera.
+"Start-up Engineering" course, during Summer 2013, offered by Stanford University.
 
 The GitSHell program, written entirely in Bourne Again Shell (BASH), is an interactive command-driven
 development environment for git. The decision to develop GitSHell as a bash script was taken because
