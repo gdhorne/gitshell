@@ -95,7 +95,7 @@ function disclaimer
 
 function usage 
 {
-	cat $(dirname $(which gitsh.sh))/gitshell/HOW-TO
+	cat $(dirname $(which gitsh))/gitshell/HOW-TO
 	echo
 }
 
@@ -1522,7 +1522,7 @@ then
 fi
 
 export TEXTDOMAIN=gitsh.sh
-I18NLIB=$(dirname $(which gitsh.sh))/gitshell/i18n-lib.sh
+I18NLIB=$(dirname $(which gitsh))/gitshell/i18n-lib.sh
 if [[ -f ${I18NLIB} ]]
 then
     source ${I18NLIB}
