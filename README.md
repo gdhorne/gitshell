@@ -1,4 +1,5 @@
-#							GitSHell (version 0.1)
+# GitSHell
+(version 0.1)
 
 
 ## Introduction
