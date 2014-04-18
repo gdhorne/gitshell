@@ -1,0 +1,4 @@
+GitSHell is fully documented via the man pages which can be viewed
+by typing the command 'gitsh help [command]'.
+
+For a list of all supported commands type the command 'help'.

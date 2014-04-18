@@ -1,0 +1,54 @@
+.\" Manpage for gitshell.
+.\" Contact horne@ncf.ca to correct errors or typos.
+.TH GITSH-DEPLOY 1 "16 April 2014" "0.1" "GitSHell Manual"
+.SH NAME
+gitsh-deploy \- create a local repository, and optionally a corresponding remote repository
+.SH SYNOPSIS
+[gitsh] deploy <repository_type> <repository_name>
+.SH DESCRIPTION
+.nh
+.ad l
+\fIgitsh\fR \fIdeploy\fR is a GitSHell command which deploys an application
+to web service providers.
+.fi
+.PP
+.nh
+.ad l
+<repository_type> is either 'local' or 'remote'. If <repository_type> is local,
+then <repository_name> is created under the repository base defined in the
+configuration file. If <repository_type> is remote, then <repository_name> is
+created as a GitHub hosted repository and locally under the repository base defined in
+the configuration file.
+.PP
+<repository name> is assumed to contain no space characters in its name;
+this is not validated.
+.fi
+.PP
+If the repository type or name is missing, then an error message
+is displayed. There is no default repository type.
+.SH OPTIONS
+None
+.SH EXAMPLES
+.PP
+To verify successful creation of the local repository open the repository.
+.PP
+.nf
+gitsh:[]> create local sample
+gitsh:[]> open sample
+gitsh:[sample]> 
+.fi
+.PP
+To verify successful creation of the remote repository visit  
+https://github.com/users/<repository_name>.
+.PP 
+.nf
+gitsh:[]> create remote sample
+gitsh:[]> open sample
+gitsh:[sample]>
+.fi
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Gregory D. Horne (horne at ncf dot ca)
+.SH GITSH
+An internal gitsh(1) command; not callable from a standard Unix shell.

@@ -1,0 +1,32 @@
+.\" Manpage for gitshell.
+.\" Contact horne@ncf.ca to correct errors or typos.
+.TH GITSH-PWD 1 "21 February 2014" "0.1" "GitSHell Manual"
+.SH NAME 
+gitsh-pwd \- display working subdirectory name
+.SH SYNOPSIS
+[gitsh] pwd
+.SH DESCRIPTION
+.nh
+.ad l
+\fIgitsh\fR \fIpwd\fR is a GitSHell command which
+displays the name of the working subdirectory.
+.fi
+.SH OPTIONS
+None
+.SH EXAMPLES
+.nf
+gitsh:[sample]> pwd
+/
+gitsh:[sample]> ls
+i18n  man  src README.md
+gitsh:[sample]> cd i18n
+gitsh:[sample]> pwd
+/i18n
+gitsh:[sample]>
+.fi
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Gregory D. Horne (horne at ncf dot ca)
+.SH GITSH
+An internal gitsh(1) command; not callable from a standard Unix shell.

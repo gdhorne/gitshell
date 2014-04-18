@@ -1,0 +1,41 @@
+.\" Manpage for gitshell.
+.\" Contact horne@ncf.ca to correct errors or typos.
+.TH GITSH-NAMES 1 "16 April 2014" "0.1" "GitSHell Manual"
+.SH NAME
+gitsh-names \- lists existing repository names
+.SH SYNOPSIS
+[gitsh] names
+.SH DESCRIPTION
+.nh
+.ad l
+\fIgitsh\fR \fInames\fR is a GitSHell command which lists the names of
+each existing repository.
+.fi
+.PP
+.nh
+.ad l
+.SH OPTIONS
+None
+.SH EXAMPLES
+.PP
+Display a listing of all existing repository names.
+.PP
+.nf
+gitsh:[]> names
+sample sample1 sample2 
+gitsh:[sample]> names
+sample sample1 sample2
+gitsh:[sample]> 
+.fi
+.PP
+.nf
+gitsh:[]> create remote sample
+gitsh:[]> open sample
+gitsh:[sample]>
+.fi
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Gregory D. Horne (horne at ncf dot ca)
+.SH GITSH
+An internal gitsh(1) command; not callable from a standard Unix shell.

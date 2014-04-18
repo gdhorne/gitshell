@@ -1,0 +1,35 @@
+.\" Manpage for gitshell.
+.\" Contact horne@ncf.ca to correct errors or typos.
+.TH GITSH-OPEN 1 "21 February 2014" "0.1" "GitSHell Manual"
+.SH NAME 
+gitsh-open \- access named repository
+.SH SYNOPSIS
+[gitsh] open [<repository_name>]
+.SH DESCRIPTION
+.nh
+.ad l
+\fIgitsh\fR \fIopen\fR is a GitSHell command which
+makes <repository_name> the active repository.
+.PP
+If this command is issued when another repository is open, then
+an error message is displayed. In this case, the current
+repository must be closed.
+.PP
+If the repository name is omitted, then an error message is
+displayed.
+.fi
+.SH OPTIONS
+None
+.SH EXAMPLES
+.nf
+gitsh:[]> names
+gitshell  sample
+gitsh:[]> open sample
+gitsh:[sample]>
+.fi
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Gregory D. Horne (horne at ncf dot ca)
+.SH GITSH
+An internal gitsh(1) command; not callable from a standard Unix shell.

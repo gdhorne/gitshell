@@ -1,0 +1,31 @@
+.\" Manpage for gitshell.
+.\" Contact horne@ncf.ca to correct errors or typos.
+.TH GITSH-VIEW 1 "21 February 2014" "0.1" "GitSHell Manual"
+.SH NAME 
+gitsh-view \-  view a file within the repository
+.SH SYNOPSIS
+[gitsh] view [<subdirectory/><file>
+.SH DESCRIPTION
+.nh
+.ad l
+\fIgitsh\fR \fIview\fR is a GitSHell command which
+displays a file within the repository.
+.PP
+<file> is contained within the current subdirectory, by default, or within
+<subdirectory>.
+.PP
+<subdirectory> is always relative to the repository root. If <subdirectory>
+begins with a slash (/), then it must either be relative to the repository
+root or must match the absolute path from repository root to the specific
+subdirectory within the current repository.
+.fi
+.SH OPTIONS
+None
+.SH EXAMPLES
+None
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Gregory D. Horne (horne at ncf dot ca)
+.SH GITSH
+An internal gitsh(1) command; not callable from a standard Unix shell.

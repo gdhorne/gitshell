@@ -1,0 +1,53 @@
+.\" Manpage for gitshell.
+.\" Contact horne@ncf.ca to correct errors or typos.
+.TH GITSH-CLONE 1 "21 February 2014" "0.1" "GitSHell Manual"
+.SH NAME
+gitsh-clone \- clone a repository into a new subdirectory
+.SH SYNOPSIS
+[gitsh] clone <repository_url> <repository_name>
+.SH DESCRIPTION
+.nh
+.ad l
+\fIgitsh\fR \fIclone\fR is a GitSHell command which clones repository, and creates a
+a corresponding remote repository.
+.fi
+.PP
+.nh
+.ad l
+<repository_url> is a GitHub URL for the repository to be cloned. It is
+created as a GitHub hosted repository and locally under the repository base
+defined in the configuration file.
+.PP
+<repository_name> is the name by which the repository will be created. If
+missing the <repository_name> defaults to the repository name to be
+cloned.
+.fi
+.PP
+If the repository URL is missing, then an error message
+is displayed.
+.SH OPTIONS
+None
+.SH EXAMPLES
+.PP
+To verify successful creation of the local repository open the repository.
+.PP
+.nf
+gitsh:[]> create local sample
+gitsh:[]> open sample
+gitsh:[sample]> 
+.fi
+.PP
+To verify successful creation of the remote repository visit  
+https://github.com/users/<repository_name>.
+.PP 
+.nf
+gitsh:[]> create remote sample
+gitsh:[]> open sample
+gitsh:[sample]>
+.fi
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Gregory D. Horne (horne at ncf dot ca)
+.SH GITSH
+An internal gitsh(1) command; not callable from a standard Unix shell.

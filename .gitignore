@@ -1,0 +1,6 @@
+# Ignore these files in this directory
+.git
+.gitsh
+# Except this file
+\!.gitignore
+\!*

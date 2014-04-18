@@ -1,0 +1,47 @@
+.\" Manpage for gitshell.
+.\" Contact horne@ncf.ca to correct errors or typos.
+.TH GITSH-CD 1 "21 February 2014" "0.1" "GitSHell Manual"
+.SH NAME
+gitsh-cd \- change the shell working subdirectory within the current repository
+.SH SYNOPSIS
+[gitsh] cd <subdirectory>
+.SH DESCRIPTION
+\fIgitsh\fR \fIcd\fR is a GitSHell command which changes the current subdirectory.
+.PP
+.nh
+.ad l
+<subdirectory> is always relative to the repository root. If <subdirectory>
+begins with a slash (/), then it must either be relative to the repository
+root or must match the absolute path from repository root to the specific
+subdirectory within the current repository.
+.fi
+.PP
+If the subdirectory is not found or is not within the current repository,
+then an error message is displayed.
+.PP
+If this command is used outside of a repository, then an error message is
+displayed.
+.SH OPTIONS
+None
+.SH EXAMPLES
+The root directory (/) shown below represents the root of the repository
+and is presented to GitSHell users in this style.
+.PP
+.nf
+gitsh:[sample]> pwd
+/
+gitsh:[sample]> ls
+i18n src man
+gitsh:[sample]> cd man
+gitsh:[sample]> pwd
+/man
+gitsh:[sample]> cd ../src
+gitsh:[sample]> pwd
+/src
+.fi
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Gregory D. Horne (horne at ncf dot ca)
+.SH GITSH
+An internal gitsh(1) command; not callable from a standard Unix shell.

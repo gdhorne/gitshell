@@ -1,0 +1,34 @@
+.\" Manpage for gitshell.
+.\" Contact horne@ncf.ca to correct errors or typos.
+.TH GITSH-ROOT 1 "21 February 2014" "0.1" "GitSHell Manual"
+.SH NAME 
+gitsh-root \- display repository root name, otherwise resets the repository
+.SH SYNOPSIS
+[gitsh] root [reset]
+.SH DESCRIPTION
+.nh
+.ad l
+\fIgitsh\fR \fIroot\fR is a GitSHell command which
+displays repository root name, otherwise resets the repository.
+.fi
+.SH OPTIONS
+None
+.SH EXAMPLES
+.nf
+gitsh:[sample]> pwd
+/man/en
+gitsh:[sample]> root
+sample
+gitsh:[sample]> root reset
+gitsh:[sample]> root
+sample
+gitsh:[sample]> pwd
+/
+gitsh:[sample]>
+.fi
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Gregory D. Horne (horne at ncf dot ca)
+.SH GITSH
+An internal gitsh(1) command; not callable from a standard Unix shell.

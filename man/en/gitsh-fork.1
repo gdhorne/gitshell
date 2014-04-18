@@ -1,0 +1,49 @@
+.\" Manpage for gitshell.
+.\" Contact horne@ncf.ca to correct errors or typos.
+.TH GITSH-FORK 1 "16 April 2014" "0.1" "GitSHell Manual"
+.SH NAME
+gitsh-fork \- create a local repository, and optionally a corresponding remote repository
+.SH SYNOPSIS
+[gitsh] fork <repository_name> <repository_url>
+.SH DESCRIPTION
+.nh
+.ad l
+\fIgitsh\fR \fIfork\fR is a GitSHell command which forks an existing remote
+git repository and creates a local repository containing a clone of the
+original repository.
+.fi
+.PP
+.nh
+.ad l
+<repository_name> is either 'local' or 'remote'. If <repository_type> is local,
+then <repository_name> is the name of the local git repository. 
+.PP
+<repository_url> points to an existing remote GitHub repository.
+.fi
+.PP
+If the repository name or type is missing, then an error message
+is displayed. There is no default local repository name.
+.SH OPTIONS
+None
+.SH EXAMPLES
+.PP
+Verify successful creation of the local repository.
+.PP
+.nf
+gitsh:[]> fork repo_name https://github.com/git_account/repo_name
+gitsh:[]> names
+sample repo_name
+gitsh:[]> 
+.fi
+.PP
+To verify successful creation of the remote repository visit  
+https://github.com/user_name/<repository_name>.
+.PP 
+.nf
+.fi
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Gregory D. Horne (horne at ncf dot ca)
+.SH GITSH
+An internal gitsh(1) command; not callable from a standard Unix shell.

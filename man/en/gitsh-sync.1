@@ -1,0 +1,55 @@
+.\" Manpage for gitshell.
+.\" Contact horne@ncf.ca to correct errors or typos.
+.TH GITSH-SYNC 1 "16 April 2014" "0.1" "GitSHell Manual"
+.SH NAME
+gitsh-sync \- record changes to the repository branch and synchronise
+the remote repository with its local counterpart
+.SH SYNOPSIS
+[gitsh] sync <source_branch> [<target_branch> <message>]
+.SH DESCRIPTION
+.nh
+.ad l
+\fIgitsh\fR \fIsync\fR is a GitSHell command which records changes to a
+local repository and synchronises the remote repository with its local
+counterpart.
+.fi
+.PP
+.nh
+.ad l
+<source_branch> is assumed to contain no space characters in its name;
+this is not validated.
+.PP
+<target_branch> is assumed to contain no space characters in its name;
+this is not validated.
+.PP
+<message> is a commit message to attach to this update.
+.fi
+.PP
+If the source branch is missing, then an error message
+is displayed. There is no default source branch.
+.SH OPTIONS
+None
+.SH EXAMPLES
+.PP
+To verify successful creation of the local repository open the repository.
+.PP
+.nf
+gitsh:[]> create local sample
+gitsh:[]> open sample
+gitsh:[sample]> 
+.fi
+.PP
+To verify successful creation of the remote repository visit  
+https://github.com/users/<repository_name>.
+.PP 
+.nf
+gitsh:[sample]> sync development production
+gitsh:[sample]> 
+gitsh:[sample]>
+.fi
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Gregory D. Horne (horne at ncf dot ca)
+.SH GITSH
+An internal gitsh(1) command; not callable from a standard Unix shell.

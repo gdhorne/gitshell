@@ -1,0 +1,136 @@
+.\" Manpage for gitshell.
+.\" Contact horne@ncf.ca to correct errors or typos.
+
+.TH gitsh 1 "21 February 2014" "0.1" "GitSHell Manual"
+
+.SH NAME 
+gitsh \- git command shell
+
+.SH SYNOPSIS
+gitsh [\-\-version] [\-\-lang=<utf-8-language>]
+
+.SH DESCRIPTION
+gitsh is a command shell which simplifies management of git local and remote repositories.
+
+.SH OPTIONS
+.TP
+\-\-version
+Print the GitSHell version.
+.TP
+ \-\-lang=<utf-8-language>
+Set the local language. Presently the only localised language supported is en_US.UTF-8.
+By default gitsh uses en_US.UTF-8.
+
+.SH GITSH COMMANDS
+The commands are divided into those internal to GitSHell and a subset of Git commands currently 
+supported by GitSHell intended for novice Git users.
+
+.SS INTERNAL
+The following commands are only available within the GitSHell environment. When using these 
+commands drop the 'gitsh' portion.
+.PP
+\fBgitsh-cd\fR(1)
+.RS 4
+Change subdirectory in the repository.
+.RE
+.PP
+\fBgitsh-clear\fR(1)
+.RS 4
+Clear the terminal.
+.RE
+.PP
+\fBgitsh-clone\fR(1)
+.RS 4
+Clone a repository into a new subdirectory.
+.RE
+.PP
+\fBgitsh-close\fR(1)
+.RS 4
+Leave the repository.
+.RE
+.PP
+\fBgitsh-configure\fR(1)
+.RS 4
+Configure names(s) and email(s) of the user(s).
+.RE
+.PP
+\fBgitsh-create\fR(1)
+.RS 4
+Create a local repository, and optionally a corresponding remote repository.
+.RE
+.PP
+\fBgitsh-delete\fR(1)
+.RS 4
+Delete file/subdirectory/repository.
+.RE
+.PP
+\fBgitsh-edit\fR(1)
+.RS 4
+Edit file within the repository.
+.RE
+.PP
+\fBgitsh-exit\fR(1)
+.RS 4
+Exit the command shell.
+.RE
+.PP
+\fBgitsh-fork\fR(1)
+.RS 4
+Fork an existing repository.
+.RE
+.PP
+\fBgitsh-license\fR(1)
+.RS 4
+View license associated with this programme.
+.RE
+.PP
+\fBgitsh-ls\fR(1)
+.RS 4
+List files within the repository.
+.RE
+.PP
+\fBgitsh-mkdir\fR(1)
+.RS 4
+Create subdirectory within the repository.
+.RE
+.PP
+\fBgitsh-open\fR(1)
+.RS 4
+Access named repository.
+.RE
+.PP
+\fBgitsh-pwd\fR(1)
+.RS 4
+Display name of current/working subdirectory.
+.RE
+.PP
+\fBgitsh-repo\fR(1)
+.RS 4
+Show information about the repository.
+.RE
+.PP
+\fBgitsh-root\fR(1)
+.RS 4
+Display repository root name, otherwise resets the repository.
+.RE
+.PP
+\fBgitsh-stage\fR(1)
+.RS 4
+Create, delete, and list branches within the repository.
+.RE
+.PP
+\fBgitsh-sync\fR(1)
+.RS 4
+Synchronise branches within the local reppository and with its associated remote repository.
+.RE
+.PP
+\fBgitsh-view\fR(1)
+.RS 4
+View named file within the repository.
+.RE
+.
+.SH BUGS
+No known bugs.
+
+.SH AUTHOR
+Gregory D. Horne (horne at ncf dot ca)
