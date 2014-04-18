@@ -3,7 +3,7 @@
 ################################################################################
 #
 # Programme Name: GitSHell
-# Application Name: gitsh.sh
+# Application Name: gitshell.sh
 # Description: Provides a command-line shell environment for Git. 
 #
 # Copyright (c) 2013-2014 Gregory D. Horne (horne at ncf dot ca)
@@ -741,34 +741,33 @@ function initialise
 {
 	local gitsh_configuration_file
 
-	#repository_base "empty"
 	repository_base ${HOME}
 	repository_status closed
 
-        if [[ $(configuration_exists) ]] || [[ ! $(configuration_exists) && $(is_git_repository) ]]
-        then
-                gitsh_configuration_file=$(repository_root)/.gitsh
+    if [[ $(configuration_exists) ]] || [[ ! $(configuration_exists) && $(is_git_repository) ]]
+    then
+    	gitsh_configuration_file=$(repository_root)/.gitsh
 		configure ${gitsh_configuration_file}
-        else
-                gitsh_configuration_file=$(repository_root)/.gitsh
+	else
+		gitsh_configuration_file=$(repository_root)/.gitsh
 		configure ${gitsh_configuration_file}
 
-                echo
-                response="o"
+		echo
+		response="o"
 		response=$(i18n_prompt "open_or_create_repository" ${response})
                 
 		if printf "%s" ${response} | grep -iq "o"
-                then
-               		repository_open
-                else
+		then
+			repository_open
+		else
 			i18n_display "create_repository"
-                        repo_name="dummy"
+			repo_name="dummy"
 			repo_name=$(i18n_prompt "repository_name_prompt")
-                        repository_create local ${repo_name}
-                fi
-        fi
+			repository_create local ${repo_name}
+		fi
+	fi
 
-        configuration
+	configuration
 
 	cd $(repository_base)
 }
@@ -1477,12 +1476,6 @@ function user_email
 	else
 		git config --global user.email ${email}
 
-		#if [ $(repository_root name) == "(none)" ]
-		#then
-		#	git config --global user.email ${email} >> /dev/null 2>&1
-		#else
-		#	git config --local user.email ${email} >> /dev/null 2>&1
-		#fi
 	fi
 }
 
@@ -1505,18 +1498,12 @@ function user_name
 	else
 		git config --global user.name ${name}
 
-		#if [ $(repository_root name) == "(none)" ]
-		#then
-		#	git config --global user.name ${name} #>> /dev/null 2>&1
-		#else
-		#	git config --local user.name ${name} #>> /dev/null 2>&1
-		#fi
 	fi
 }
 
 ################################################################################
 #
-#						Git Command Shell Environment
+#	Git Command Shell Environment
 #
 ################################################################################
 
