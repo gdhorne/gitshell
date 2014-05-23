@@ -6,7 +6,7 @@
 # Application Name: gitshell.sh
 # Description: Provides a command-line shell environment for Git. 
 #
-# Copyright (c) 2013-2014 Gregory D. Horne (horne at ncf dot ca)
+# Copyright (c) 2013-2014 Gregory D. Horne (horne at member dot fsf dot org)
 # 
 ################################################################################
 #
@@ -65,7 +65,7 @@ echo "##########################################################################
 echo "#                              GitSHell                                  #"
 echo "#                                                                        #"
 echo "#                    Git Command Shell Environment                       #"
-echo "#                             version 0.1                                #"
+echo "#                             version 0.2                                #"
 echo "#                                                                        #"
 echo "##########################################################################"
 echo
@@ -80,12 +80,12 @@ function disclaimer
 	echo
 	echo "GitSHell version 0.1, Copyright (C) 2013-2014 Gregory D. Horne"
 	echo
-    	echo "GitSHell comes with ABSOLUTELY NO WARRANTY, to the extent"
-    	echo "permitted by applicable law; read the LICENSE by typing"
+    echo "GitSHell comes with ABSOLUTELY NO WARRANTY, to the extent"
+    echo "permitted by applicable law; read the LICENSE by typing"
 	echo "the command 'license'."
 	echo
-    	echo "This is free software, and you are welcome to redistribute it under"
-    	echo "certain conditions; read the LICENSE by typing the command 'license'."
+    echo "This is free software, and you are welcome to redistribute it under"
+    echo "certain conditions; read the LICENSE by typing the command 'license'."
 	echo
 }
 
@@ -926,13 +926,13 @@ function repository_create
 				#fi
 
 				wd=$(pwd)
-            	cd $(repository_base)/${repository_name}
-            	echo >> .gitignore
-            	echo "# Ignore these files in this directory" >> .gitignore
-            	echo ".gitsh" >> .gitignore
-            	echo "# Except this file" >> .gitignore
-            	echo "\!.gitignore" >> .gitignore
-				cd ${wd}
+            			cd $(repository_base)/${repository_name}
+            			
+				echo >> .gitignore
+            			echo "# Ignore these files in this directory" >> .gitignore
+            			echo ".gitsh" >> .gitignore
+            			echo "# Except this file" >> .gitignore
+            			echo "\!.gitignore" >> .gitignore
 
 				git init
 				git add -A
@@ -940,6 +940,7 @@ function repository_create
 		
 				cd ${wd}
 			fi
+
 			if [ ${repository_type} == "remote" ]
 			then
 				wd=$(pwd)
@@ -1025,35 +1026,25 @@ function repository_branch
 }
 
 ################################################################################
-# Function: Forks an existing git repository creating a remote repository at
-#           https://github.com as well as a local repository containing a
-#			clone of the original repository.
+# Function: Forks an existing GitHub repository creating a remote repository at
+#           https://github.com.
 ################################################################################
 
 function repository_fork
 {
-	local repository_name=${1}
-	local repository_url=${2}
-	shift
-	shift
-    local repository_description=$(echo $@ | sed -e 's/\"//g')
+	local repository_url=${1}
 
-    if [ -z ${repository_name} ] || [ -z ${repository_url} ]
-    then
-        i18n_display "git_repository_type_or_name_missing"
-    elif [ $(repository_root name) != "(none)" ]
-    then
-        i18n_display_nobreak "open_repository_warning_preface" ${repository_name}
-        i18n_display "open_repository_warning_epilogue"
-    else
-		echo "forking ${repository_url}"
-		git clone --origin=upstream ${repository_url} ${repository_name}
-		repository_create remote ${repository_name} ${repository_description}
-		local wd=$(pwd)
-		cd $(repository_base)/${repository_name}
-		#git remote add origin git@github.com:$(user_name)/${repository_name}.git
-		git push -u origin --all
-		cd ${wd}
+	if [ -z ${repository_url} ]
+	then
+		i18n_display "git_repository_type_or_name_missing"
+	elif [ $(repository_root name) != "(none)" ]
+	then
+		i18n_display_nobreak "open_repository_warning_preface" ${repository_url}
+		i18n_display "open_repository_warning_epilogue"
+	else
+		local repository_owner=`echo ${repository_url} | awk -F/ '{print $4}'`
+		local repository_name=`echo ${repository_url} | awk -F/ '{print $5}'`	
+		curl -u $(user_name) https://api.github.com/repos/${repository_owner}/${repository_name}/forks -d "{\"name\":\"${repository_name}\"}"
 	fi	
 }
 

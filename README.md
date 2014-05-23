@@ -1,11 +1,11 @@
-# GitSHell
-(version 0.1)
+							GitSHell (version 0.2)
 
 
 ## Introduction
 
 The idea for the Git Command Shell (GitSHell) originated while participating in the
-"Start-up Engineering" course, during Summer 2013, offered by Stanford University.
+"Start-up Engineering" course, during Summer 2013, offered by Stanford University
+in conjunction with Coursera.
 
 The GitSHell program, written entirely in Bourne Again Shell (BASH), is an interactive command-driven
 development environment for git. The decision to develop GitSHell as a bash script was taken because
@@ -14,48 +14,79 @@ typically installed on modern-day Unix systems, including GNU/Linux and Apple Ma
 
 ## What does GitSHell provide the user?
 
+* Git commands tend to come in groups. Avoid typing `git` repeatedly by executing them
+  in a dedicated shell:
+
+		sh$ gitsh
+		gitsh:[]> create remote sample
+		gitsh:[]: open sample
+		gitsh:[sample]> # add, delete, modify files
+		gitsh:[sample]> add .
+		gitsh:[sample]> commit -m "Release to QA"
+		gitsh:[sample]> push 
+		gitsh:[sample]> close
+		gitsh:[]>
+
 * GitSHell provides a higher level abstraction in addition to the standard git
-  commands to manage the repository's lifecycle.
+  commands. But the user can choose to use git commands to manage the
+  entire lifecycle of the repository.
 
-* Avoid repeatedly typing 'git' before every command.
+		sh$ gitsh
+		gitsh:[]> create remote sample
+		gitsh:[]> open sample
+		gitsh:[sample]> # add, delete, modify files
+		gitsh:[sample]> synchronise "<commit comment>"
+		gitsh:[sample]> close
+		gitsh:[]>
 
-        sh$ gitsh
-        gitsh:[]> create remote sample
-        gitsh:[]: open sample
-        gitsh:[sample]> # add, delete, modify files
-        gitsh:[sample]> sync master master "Initial commit"
-        gitsh:[sample]> close
-        gitsh:[]>
+  The preceding examples are very simplified for illustrative purposes.
 
-  The preceding example is simplified for illustrative purposes.
-
-* Modifications to your Git configuration can be made with GitSHell's
-  'configure' command.
+* Modifications to your Git configuration can be made globally or locally
+  with 'gitsh configure' command depending upon the current context. If
+  no arguments follow the command, an editable configuration file loads.
+  The local configuration changes only effect git commands issued during the
+  session and are forgotten when you exit, just like shell environment
+  variables.
 
 		gitsh:[sample]> configure
 
-* Obtain information about the state of the git repository.
+* Obtain information about the state of the git repository, without
+  modifying your shell settings. This includes the name of the current HEAD, and
+  a colour and sigil to indicate the status.
 
 		gitsh:[sample]> repo
 
 * Further information about the commands available within the GitSHell
   environment can be found by typing the command:
 
-  * 'help' within GitShell
-  * 'gitsh help [command]' within GitShell
-  * 'man git[sh] [command]' at the Unix shell prompt
+  (1) 'help' within GitShell; this includes both git and gitsh commands. 
+  (2) typing the command 'git[sh] help [command]' within GitShell.
+  (3) typing the command 'man git[sh] [command]' at the Unix shell prompt.
 
-  A subset of the full Git command set is supported by GitShell while 
-  providing the the most useful functionality.
+  A subset of the full Git command set is supported by GitShell although future
+  releases will enable the full Git command set.
 
 ## Installing GitSHell
 
-Instructions forthcoming.
+* On Unix systems:
 
-## Contributing
+    curl -O https://github.com/gregoryhorne/gitsh/gitsh-0.1.tar.gz
+	tar -zxf gitsh-0.1.tar.gz
+	cd gitsh-0.1
+    sh install.sh
 
-If you have the skills to translate the messages file (i18n/en.po) to
-another language, your assistance would be greatly appreciated.
+By default the gitsh software will be installed in the ${HOME}/bin/gitshell-0.1
+subdirectory. If ${HOME}/bin does not exist, the subdirectory will be created.
+A symbolic link from ${HOME}/bin/gitsh will be made to
+${HOME}/bin/gitshell-0.1/gitsh.sh.
+
+If an alternate installation subdirectory is preferred, edit the install.sh
+script by adjusting the line containing INSTALL=${HOME}/bin.
+
+## Contributing to gitsh
+
+In the spirit of free/libre software pull requests and user contributions
+are encouraged.
 
 ## License
 
