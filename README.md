@@ -70,20 +70,24 @@ typically installed on modern-day Unix systems, including GNU/Linux and Apple Ma
 
 * On Unix systems:
 
-    curl -O https://github.com/gregoryhorne/gitsh/gitsh-0.1.tar.gz
-	tar -zxf gitsh-0.1.tar.gz
-	cd gitsh-0.1
+  Note: In the interim cloning the GitHub repository and manually installing
+        the software (application and man pages) is necessary.
+
+    curl -O https://github.com/gdhorne/gitshell/gitshell-m.n.tar.gz
+	tar -zxf gitshell-m.n.tar.gz
+	cd gitshell-m.n
     sh install.sh
 
-By default the gitsh software will be installed in the ${HOME}/bin/gitshell-0.1
+By default the gitshell software will be installed in the ${HOME}/bin/gitshell-m.n
 subdirectory. If ${HOME}/bin does not exist, the subdirectory will be created.
 A symbolic link from ${HOME}/bin/gitsh will be made to
-${HOME}/bin/gitshell-0.1/gitsh.sh.
+${HOME}/bin/gitshell-m.n/gitshell.sh.
 
 If an alternate installation subdirectory is preferred, edit the install.sh
-script by adjusting the line containing INSTALL=${HOME}/bin.
+script by adjusting the line containing INSTALL=${HOME}/bin. When possible
+it is recommended gitshell be installed in /usr/local/bin/.
 
-## Contributing to gitsh
+## Contributing to GitSHell
 
 In the spirit of free/libre software pull requests and user contributions
 are encouraged.
